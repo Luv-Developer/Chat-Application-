@@ -15,14 +15,14 @@ html , body{
     display: flex;
     align-items: center;
     gap:50px;
-    padding:35px 50px;
+    padding:30px 50px;
 }
 #navbar a{
     color:white;
     text-decoration: none;
 }
 #box{
-    margin-left: 850px;
+    margin-left: 620px;
     display: flex;
     align-items: center;
     gap:10px;
@@ -35,7 +35,7 @@ html , body{
 #logo a{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
-    font-size:22px;
+    font-size:18px;
     transition:0.1s;
 }
 #logo a:hover{
@@ -100,21 +100,20 @@ html , body{
     height:90%;
 }
 #a1{
-    border:2px solid white;
     width:50%;
     height:100%;
     padding:50px 50px;
 }
 #a1 h1{
-    margin-top: 100px;
-    font-size:100px;
+    margin-top: 80px;
+    font-size:65px;
     color:white;
     margin-left: 150px;
     margin-bottom: 20px;
 }
 #a1 label{
     margin-left: 150px;
-    font-size:25px;
+    font-size:20px;
     color:rgb(234, 233, 233);
 }
 #a1 button{
@@ -130,8 +129,12 @@ html , body{
     background-color: rgb(214, 74, 144);
     border:transparent;
     color:white;
-    margin-left: 160px;
+    margin-left: 100px;
     transition:0.1s;
+}
+#start a{
+    color:white;
+    text-decoration: none;
 }
 #start:hover{
     transition:0.1s;
@@ -148,8 +151,12 @@ html , body{
     background-color: rgb(143, 212, 40);
     border:transparent;
     color:white;
-    margin-left: 20px;
+    margin-left: 10px;
     transition:0.1s;
+}
+#Login a{
+    color:white;
+    text-decoration: none;
 }
 #Login:hover{
     transition:0.1s;
@@ -161,7 +168,55 @@ html , body{
     align-items: center;
 }
 #a2{
-    border:2px solid white;
     width:50%;
     height:100%;
+    padding:40px 30px;
+}
+#images{
+    margin-top: 30px;
+    width:500px;
+    height:400px;
+    animation:animatebg 10s  infinite;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+#join{
+    width:130px;
+    height:45px;
+    border-radius: 20px;
+    border:2px solid white;
+    font-size:15px;
+    font-weight: bold;
+    background-color: rgb(238, 151, 81);
+    border:transparent;
+    color:white;
+    margin-left: 10px;
+    transition:0.1s;
+}
+#join a{
+    color:white;
+    text-decoration: none;
+}
+#join:hover{
+    transition:0.1s;
+    cursor: pointer;
+    background-color:rgb(226, 136, 62);
+}
+@keyframes animatebg{
+    0%{
+        background-image: url("https://www.bhthechange.org/wp-content/uploads/2021/03/shutterstock_1070444933-2048x1366.jpg");
+    }
+    25%{
+        background-image: url("https://www.westend61.de/images/0001615437pw/happy-man-with-wireless-headphones-using-smart-phone-XLGF02388.jpg");
+    }
+    50%{
+        background-image: url("https://bethesdahealth.org/wp-content/uploads/2020/02/iStock-1047528620.jpg");
+    }
+    75%{
+        background-image: url("https://s3.amazonaws.com/cms.ipressroom.com/173/files/20164/5748b3e82cfac26479036ec7_Teenager+using+phone/Teenager+using+phone_0c3095a8-386a-4155-a2d4-952466aa0687-prv.jpg");
+    }
+    100%{
+        background-image: url("https://www.bhthechange.org/wp-content/uploads/2021/03/shutterstock_1070444933-2048x1366.jpg");
+    }
 }
