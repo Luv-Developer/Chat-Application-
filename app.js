@@ -19,6 +19,9 @@ app.set("view engine","ejs")
 app.use(cookieParser())
 io.on("connection",(socket)=>{
     console.log("User Connected ",socket.id)
+    io.on("user-data",(data)=>{
+        io.emit("message",data)
+    })
 })
 app.get("/",(req,res)=>{
     res.render("homepage")
@@ -29,7 +32,7 @@ app.get("/account",(req,res)=>{
 app.post("/account",async(req,res)=>{
     const {username,email,phone} = req.body // this is called as destructuring
     let user = await usermodel.findOne({email})
-    if(!user){
+    if(!user){``
     let user = await usermodel.create({
         username:username,
         email:email,
@@ -45,7 +48,6 @@ app.post("/account",async(req,res)=>{
     }
 }
 else{
-    res.send("alert('Email Already Exist')")
     res.redirect("/account")
 }
 })
@@ -68,8 +70,13 @@ app.get("/room",checkaccount,async(req,res)=>{
     }
     res.render("room",{room})
 })
-app.get("/join",(req,res)=>{
+app.get("/join",checkaccount,async(req,res)=>{
+    let user = await usermodel.findOne({email:req.user.email})
+    console.log(user)
     res.render("join")
+})
+app.post("/join",(req,res)=>{
+    res.redirect(`/${req.body.room}`)
 })
 app.post("/chat",checkaccount,async(req,res)=>{
     let user = await usermodel.findOne({email:req.user.email})  
@@ -77,7 +84,7 @@ app.post("/chat",checkaccount,async(req,res)=>{
 })
 app.get("/:room",checkaccount,async(req,res)=>{
     let user = await usermodel.findOne({email:req.user.email})
-    console.log(req.params.room)
+    console.log(user)
     res.render("meeting",{user})
 })
 server.listen(PORT,()=>{

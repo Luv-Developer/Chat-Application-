@@ -9,12 +9,14 @@
 <body>
     <div class="container">
         <div class="card">
+            <form action = "/join" method = "post">
             <h1>Join a Room</h1>
             <p>Enter the Room ID to join the conversation</p>
             <form id="joinForm">
-                <input type="text" id="roomId" placeholder="Enter Room ID" required>
+                <input type="text" id="roomId" placeholder="Enter Room ID" name = "room" required>
                 <button type="submit">Join Room</button>
             </form>
+        </form>
         </div>
     </div>
     <script src="script.js"></script>
